@@ -1,0 +1,16 @@
+# pycache
+*.pyc
+
+# enviromental variables
+*.env
+.env
+
+# virtual enviroment files
+api/.venv
+
+# other
+api/staticfiles
+*.swp
+codeship.aes
+.idea/
+
