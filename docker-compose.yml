@@ -1,0 +1,26 @@
+version: '2.1'
+services:
+
+  api:
+    build: ./api
+    command: gunicorn -b 0.0.0.0:8000 todosapp.wsgi:application # python manage.py runserver 0:8000
+    volumes:
+      - ./api:/usr/src/app
+    ports:
+      - "8001:8000"
+    environment:
+      DATABASE_URL: postgres://todoapp@postgres/todos
+    depends_on:
+      postgres:
+        condition: service_healthy
+    links:
+      - postgres
+
+  
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: todoapp
+      POSTGRES_DB: todos
+    healthcheck:
+      test: exit 0
