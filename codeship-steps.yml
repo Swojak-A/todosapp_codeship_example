@@ -1,6 +1,6 @@
 - name: rspec
-  service: todo-codeship-example
+  service: todosapp-codeship-example
   command: bin/ci "python manage.py migrate" # you only need to change the command here
 - name: tests
-  service: todo-codeship-example
+  service: todosapp-codeship-example
   command: bin/ci "python manage.py test"
