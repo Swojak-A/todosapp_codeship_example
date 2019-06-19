@@ -1,6 +1,6 @@
-# !/bin/sh
+#!/bin/sh
 
-# wait-for-postgres
+#wait-for-postgres
 
 set -e
 
